@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /favicon.ico
 Disallow: /images
+Disallow: /articles/images
 
 Sitemap: https://chinakyc.my/sitemap.xml

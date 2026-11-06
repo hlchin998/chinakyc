@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en-MY">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding the 18-Digit Chinese ID Card Number Format</title>
+  <meta name="description" content="What each part of an 18-digit Chinese Resident Identity Card number means — and why a valid format is not the same as a verified identity.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = { theme: { extend: {
+      fontFamily: { display: ['Sora','sans-serif'], sans: ['Inter','sans-serif'], mono: ['JetBrains Mono','monospace'] },
+      colors: {
+        ink: { DEFAULT:'#121214', 800:'#1c1c20', 700:'#2a2a30' },
+        seal: { DEFAULT:'#D93A24', dark:'#B22D1A', soft:'#FBE9E5' },
+        paper: { DEFAULT:'#FAF6EF', dark:'#F1EADF' },
+        jade: { DEFAULT:'#0E7C66', soft:'#E2F2EE' },
+        amber: { DEFAULT:'#B7791F', soft:'#FBF0DC' },
+        indigo: { DEFAULT:'#3F4FB8', soft:'#E7E9F8' }
+      } } } }
+  </script>
+  <style>
+    html{scroll-behavior:smooth}
+    .bg-grid{background-image:linear-gradient(rgba(18,18,20,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(18,18,20,.06) 1px,transparent 1px);background-size:48px 48px}
+    .bg-grid-dark{background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:48px 48px}
+    .prose-body p{margin-top:1.1rem;line-height:1.8;color:rgba(18,18,20,.75)}
+    section[id^="s-"]{scroll-margin-top:110px}
+    article h2{line-height:1.3;margin-bottom:.25rem}
+    article h3{line-height:1.35}
+    article li,article .font-display{line-height:1.45}
+    article p.font-display{line-height:1.4}
+    .seg{transition:opacity .2s, transform .2s}
+    #anatomy.focus .seg:not(.active){opacity:.3}
+    #anatomy.focus .seg.active{transform:translateY(-3px)}
+  </style>
+</head>
+<body class="font-sans bg-paper text-ink antialiased overflow-x-hidden">
+  <header id="header" class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-ink/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="../index.html" id="logo" aria-label="ChinaKYC.my home" class="flex items-center">
+        <img src="../images/logo.png" alt="ChinaKYC.my" class="h-16 w-auto mix-blend-multiply">
+      </a>
+      <nav aria-label="Primary"
+          class="hidden lg:flex items-center gap-8 text-sm font-medium text-ink/70">
+          <a href="https://infodata.my/kyc-solution" class="hover:text-seal transition-colors">China KYC</a>
+          <a href="https://infodata.my/kyb-solution" class="hover:text-seal transition-colors">China KYB</a>
+          <a href="../blog.html" class="hover:text-seal transition-colors">Blog</a>
+        </nav>
+      <div class="flex items-center gap-3">
+        <a href="https://infodata.my" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-ink hover:bg-seal text-paper text-sm font-semibold px-5 py-2.5 rounded-full transition-colors">Book a Demo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+        <button aria-label="Toggle menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="lg:hidden w-10 h-10 rounded-full border border-ink/15 flex items-center justify-center"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-ink/10 bg-paper px-6 py-4">
+        <div class="flex flex-col text-sm font-medium">
+          <a href="https://infodata.my/kyc-solution" class="py-3 border-b border-ink/5">China KYC</a>
+          <a href="https://infodata.my/kyb-solution" class="py-3 border-b border-ink/5">China KYB</a>
+          <a href="../blog.html" class="py-3 border-b border-ink/5">Blog</a>
+        </div>
+        <a href="https://infodata.my/demo"
+          target="_blank" rel="noopener"
+          class="mt-3 w-full inline-flex justify-center bg-seal text-white font-semibold py-3 rounded-full">Book
+          a Demo</a>
+      </div>
+  </header>
+
+  <main id="top">
+    <!-- Article hero -->
+    <section id="article-hero" class="relative overflow-hidden bg-grid border-b border-ink/10">
+      <div class="absolute -top-32 -right-32 w-[460px] h-[460px] rounded-full bg-seal/10 blur-3xl"></div>
+      <div class="relative max-w-4xl mx-auto px-6 pt-12 pb-14 lg:pt-16 lg:pb-16">
+        <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-sm text-ink/55 mb-8">
+          <a href="../blog.html" class="hover:text-seal inline-flex items-center gap-2"><i class="fa-solid fa-arrow-left text-xs"></i> Blog</a>
+          <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          <span class="text-ink/80">China KYC</span>
+        </nav>
+        <div class="flex flex-wrap items-center gap-3 text-xs font-semibold mb-5">
+          <span class="bg-jade-soft text-jade px-3 py-1 rounded-full">China KYC</span>
+          <span class="bg-white border border-ink/10 text-ink/70 px-3 py-1 rounded-full">ID Documents</span>
+          <span class="text-ink/50 font-medium"><i class="fa-regular fa-clock mr-1"></i> 8 min read</span>
+        </div>
+        <h1 class="font-display font-bold text-4xl md:text-5xl tracking-tight leading-[1.25]">What Does a Chinese ID Card Number Tell You? Understanding the <span class="text-seal">18-Digit</span> Format</h1>
+        <p class="mt-6 text-lg text-ink/65 leading-relaxed">Every part of a Chinese Resident Identity Card number has a meaning. Here is what those 18 characters reveal and what they cannot tell you about the person presenting the card.</p>
+        <div class="mt-8 flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full bg-ink text-paper flex items-center justify-center text-xs font-display font-bold">ID</div>
+          <div class="text-sm"><div class="font-semibold">Info Data Team</div><div class="text-ink/50">ChinaKYC.my</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Body -->
+    <div class="max-w-4xl mx-auto px-6 pt-10 pb-14 lg:pb-20">
+      <figure id="cover-figure" class="mb-14 -mt-2">
+        <img src="images/gen_bbbe0f6c05_5713bd0c5cb765b4.png" alt="Chinese identity card number under review" class="w-full aspect-[16/9] object-cover rounded-3xl border border-ink/10">
+        <figcaption class="mt-3 text-xs text-ink/50">A correctly formatted number is a starting point, not proof of identity.</figcaption>
+      </figure>
+
+      <article id="article" class="max-w-3xl mx-auto prose-body">
+        <section id="s-intro">
+          <p class="!mt-0 text-lg !text-ink/80">When a Chinese national presents their identity card during account opening, employment registration or business onboarding, one of the first things a Malaysian organisation may look at is the identification number.</p>
+          <p>Unlike some identification systems, China's Resident Identity Card number follows a structured 18-character format. Each part of the number has a specific meaning. It contains information relating to the person's registered administrative area, date of birth and a sequence code, followed by a check digit.</p>
+          <p>Understanding this format can be useful for banks, compliance teams, employers and businesses that regularly deal with Chinese nationals.</p>
+          <div class="mt-8 bg-seal-soft border-l-4 border-seal rounded-r-2xl p-6 flex gap-4">
+            <i class="fa-solid fa-triangle-exclamation text-seal text-xl mt-1"></i>
+            <div>
+              <div class="text-xs font-semibold uppercase tracking-wider text-seal mb-2">Something important to remember</div>
+              <p class="!mt-0 font-display font-semibold text-xl leading-snug !text-ink">An identification number that follows the correct format does not automatically mean the identity card is genuine or that the person presenting it is its rightful holder.</p>
+            </div>
+          </div>
+          <p>Let's look at what these 18 digits actually tell us.</p>
+        </section>
+
+        <section id="s-format" class="mt-14">
+          <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Understanding the 18-Digit Chinese ID Card Number Format</h2>
+          <p>China's Resident Identity Card number, officially known as the Citizen Identity Number (公民身份号码), follows the national standard <b class="font-semibold text-ink">GB 11643-1999</b>.</p>
+          <p>The standard divides the 18-digit number into four sections. Each section serves a different purpose.</p>
+
+          <!-- Anatomy diagram -->
+          <div id="anatomy" class="mt-8 bg-white border border-ink/10 rounded-3xl p-6 md:p-8">
+            <div class="flex items-center justify-between mb-6">
+              <div class="text-xs font-semibold uppercase tracking-wider text-ink/50">Anatomy of a Citizen Identity Number</div>
+              <span class="text-[11px] text-ink/40">Illustrative example</span>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2 md:gap-3 font-mono font-bold text-xl sm:text-2xl md:text-[28px]">
+              <button type="button" data-seg="region" class="seg flex flex-col items-center gap-2">
+                <span class="bg-seal-soft text-seal border border-seal/25 rounded-xl px-3 py-2 tracking-[.18em]">110105</span>
+                <span class="h-1 w-full rounded-full bg-seal"></span>
+              </button>
+              <button type="button" data-seg="dob" class="seg flex flex-col items-center gap-2">
+                <span class="bg-jade-soft text-jade border border-jade/25 rounded-xl px-3 py-2 tracking-[.18em]">19880315</span>
+                <span class="h-1 w-full rounded-full bg-jade"></span>
+              </button>
+              <button type="button" data-seg="seq" class="seg flex flex-col items-center gap-2">
+                <span class="bg-amber-soft text-amber border border-amber/25 rounded-xl px-3 py-2 tracking-[.18em]">007</span>
+                <span class="h-1 w-full rounded-full bg-amber"></span>
+              </button>
+              <button type="button" data-seg="check" class="seg flex flex-col items-center gap-2">
+                <span class="bg-ink text-paper rounded-xl px-3 py-2">X</span>
+                <span class="h-1 w-full rounded-full bg-ink"></span>
+              </button>
+            </div>
+            <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3">
+              <a href="#s-region" data-seg="region" class="seg block rounded-2xl border border-ink/10 p-4 hover:border-seal/40 transition-colors">
+                <div class="text-[11px] font-semibold text-seal uppercase tracking-wider">Digits 1–6</div>
+                <div class="font-display font-semibold mt-1">Administrative region code</div>
+              </a>
+              <a href="#s-dob" data-seg="dob" class="seg block rounded-2xl border border-ink/10 p-4 hover:border-jade/40 transition-colors">
+                <div class="text-[11px] font-semibold text-jade uppercase tracking-wider">Digits 7–14</div>
+                <div class="font-display font-semibold mt-1">Date of birth</div>
+              </a>
+              <a href="#s-seq" data-seg="seq" class="seg block rounded-2xl border border-ink/10 p-4 hover:border-amber/40 transition-colors">
+                <div class="text-[11px] font-semibold text-amber uppercase tracking-wider">Digits 15–17</div>
+                <div class="font-display font-semibold mt-1">Sequence number</div>
+              </a>
+              <a href="#s-check" data-seg="check" class="seg block rounded-2xl border border-ink/10 p-4 hover:border-ink/40 transition-colors">
+                <div class="text-[11px] font-semibold text-ink uppercase tracking-wider">Digit 18</div>
+                <div class="font-display font-semibold mt-1">Check digit</div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- 1. Region -->
+        <section id="s-region" class="mt-14">
+          <div class="flex gap-5">
+            <div class="shrink-0 w-11 h-11 rounded-full bg-seal text-white font-display font-bold flex items-center justify-center">1</div>
+            <div class="min-w-0">
+              <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">The First 6 Digits: Administrative Region Code</h2>
+              <p>The first six digits identify the administrative area associated with the person's registered permanent residence.</p>
+              <p>This code follows China's administrative division system and identifies the relevant county, county-level city, banner or district.</p>
+              <p>For example, different administrative areas in Beijing, Shanghai, Guangdong and other provinces have their own corresponding codes.</p>
+              <p>It is worth understanding that this section does not necessarily tell you where the person currently lives. Someone whose household registration is associated with an area in Shanghai may now be living and working in Shenzhen, Guangzhou or even Malaysia.</p>
+              <div class="mt-6 bg-jade-soft border border-jade/20 rounded-2xl p-5 flex gap-4">
+                <i class="fa-solid fa-circle-info text-jade mt-1"></i>
+                <p class="!mt-0 text-sm !text-ink/80 leading-relaxed">For businesses conducting identity checks, the administrative region code provides useful background information, but it should not be treated as proof of the person's current residential address.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. DOB -->
+        <section id="s-dob" class="mt-14">
+          <div class="flex gap-5">
+            <div class="shrink-0 w-11 h-11 rounded-full bg-jade text-white font-display font-bold flex items-center justify-center">2</div>
+            <div class="min-w-0">
+              <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Digits 7–14: Date of Birth</h2>
+              <p>The next eight digits represent the person's date of birth in <span class="font-mono text-[15px] bg-paper-dark px-1.5 py-0.5 rounded">YYYYMMDD</span> format. This is probably the easiest section to understand. For example:</p>
+              <div id="dob-examples" class="mt-6 grid sm:grid-cols-3 gap-3">
+                <div class="bg-white border border-ink/10 rounded-2xl p-4">
+                  <div class="font-mono font-bold text-lg text-jade tracking-wider">19880315</div>
+                  <div class="text-sm text-ink/60 mt-1"><i class="fa-solid fa-arrow-right text-[10px] mr-1.5"></i>15 March 1988</div>
+                </div>
+                <div class="bg-white border border-ink/10 rounded-2xl p-4">
+                  <div class="font-mono font-bold text-lg text-jade tracking-wider">19951208</div>
+                  <div class="text-sm text-ink/60 mt-1"><i class="fa-solid fa-arrow-right text-[10px] mr-1.5"></i>8 December 1995</div>
+                </div>
+                <div class="bg-white border border-ink/10 rounded-2xl p-4">
+                  <div class="font-mono font-bold text-lg text-jade tracking-wider">20010621</div>
+                  <div class="text-sm text-ink/60 mt-1"><i class="fa-solid fa-arrow-right text-[10px] mr-1.5"></i>21 June 2001</div>
+                </div>
+              </div>
+              <p>When reviewing a Chinese ID number, this section can be used to check whether the date of birth is a valid calendar date.</p>
+              <p>It can also be compared against the date of birth declared by the individual during onboarding. If the date of birth on the identification document does not match the information provided in the application, the discrepancy should be investigated.</p>
+              <p>However, a matching date of birth alone does not establish that the identification number belongs to the person being onboarded.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Sequence -->
+        <section id="s-seq" class="mt-14">
+          <div class="flex gap-5">
+            <div class="shrink-0 w-11 h-11 rounded-full bg-amber text-white font-display font-bold flex items-center justify-center">3</div>
+            <div class="min-w-0">
+              <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Digits 15–17: Sequence Number</h2>
+              <p>The next three digits form the sequence number. This number is assigned to distinguish individuals who share the same administrative region code and date of birth.</p>
+              <p>There is also another detail worth knowing. Under the numbering rules, an odd number in the final position of this three-digit section is assigned to males, while an even number is assigned to females. For example:</p>
+              <div id="seq-examples" class="mt-6 bg-white border border-ink/10 rounded-2xl divide-y divide-ink/10">
+                <div class="flex items-center justify-between px-5 py-3.5"><span class="font-mono font-bold text-lg tracking-wider">00<span class="text-amber">1</span></span><span class="text-xs font-semibold bg-amber-soft text-amber px-3 py-1 rounded-full">Odd sequence number</span></div>
+                <div class="flex items-center justify-between px-5 py-3.5"><span class="font-mono font-bold text-lg tracking-wider">00<span class="text-amber">2</span></span><span class="text-xs font-semibold bg-paper-dark text-ink/70 px-3 py-1 rounded-full">Even sequence number</span></div>
+                <div class="flex items-center justify-between px-5 py-3.5"><span class="font-mono font-bold text-lg tracking-wider">00<span class="text-amber">3</span></span><span class="text-xs font-semibold bg-amber-soft text-amber px-3 py-1 rounded-full">Odd sequence number</span></div>
+              </div>
+              <p>This is part of China's identification numbering convention.</p>
+              <p>While this information can help someone understand the structure of a Chinese identity number, it should not be used as a standalone method of establishing an individual's identity.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Check digit -->
+        <section id="s-check" class="mt-14">
+          <div class="flex gap-5">
+            <div class="shrink-0 w-11 h-11 rounded-full bg-ink text-paper font-display font-bold flex items-center justify-center">4</div>
+            <div class="min-w-0">
+              <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">The 18th Digit: The Check Digit</h2>
+              <p>The final character is the check digit. It is used to check whether the preceding 17 digits have been entered or transcribed correctly.</p>
+              <p>Unlike the first 17 characters, the last character is calculated using a mathematical formula under the GB 11643-1999 standard, based on the preceding digits.</p>
+              <p>One detail that sometimes confuses people is the letter X appearing at the end of a Chinese ID number.</p>
+              <div id="x-callout" class="mt-6 relative overflow-hidden bg-ink bg-grid-dark rounded-2xl p-6 md:p-7 flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+                <div class="shrink-0 w-20 h-20 rounded-2xl bg-paper text-ink font-mono font-bold text-4xl flex items-center justify-center">X</div>
+                <div>
+                  <div class="font-display font-semibold text-xl text-paper">Is this a mistake? No.</div>
+                  <p class="!mt-2 !text-paper/65 text-[15px]">The check digit can be represented by a number from 0 to 9 or the letter X. In this context, X represents the value <b class="text-paper">10</b> in the check-digit calculation.</p>
+                </div>
+              </div>
+              <p>So, if you come across a Chinese ID number ending in X, there is no reason to assume that it is invalid simply because it contains a letter.</p>
+              <p>In fact, X is a recognised part of the Chinese identity number format.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Format vs verify -->
+        <section id="s-format-check" class="mt-14">
+          <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Can You Verify a Chinese ID Number Just by Checking Its Format?</h2>
+          <figure class="mt-6"><img src="images/gen_a4437ded25_cac85ab074c93b66.png" alt="Compliance officer comparing an ID number with official records" class="w-full aspect-[16/9] object-cover rounded-2xl border border-ink/10"></figure>
+          <p>This is where things become particularly important for organisations handling customer onboarding and identity verification.</p>
+          <p>A Chinese ID number can be checked for several basic characteristics. These checks are useful. They can identify obvious formatting mistakes, incorrectly entered numbers and some invalid identification numbers.</p>
+
+          <div id="compare-checks" class="mt-8 grid md:grid-cols-2 gap-4">
+            <div class="bg-white border border-ink/10 rounded-2xl p-6">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-lg bg-jade-soft text-jade flex items-center justify-center"><i class="fa-solid fa-list-check"></i></div>
+                <div class="font-display font-semibold">A format check can confirm</div>
+              </div>
+              <ul class="space-y-3 text-sm text-ink/75">
+                <li class="flex gap-3"><i class="fa-solid fa-check text-jade mt-1"></i><span>Whether it contains the expected 18 characters.</span></li>
+                <li class="flex gap-3"><i class="fa-solid fa-check text-jade mt-1"></i><span>Whether the first six digits follow a recognised administrative code format.</span></li>
+                <li class="flex gap-3"><i class="fa-solid fa-check text-jade mt-1"></i><span>Whether the date of birth section represents a valid date.</span></li>
+                <li class="flex gap-3"><i class="fa-solid fa-check text-jade mt-1"></i><span>Whether the sequence number follows the expected structure.</span></li>
+                <li class="flex gap-3"><i class="fa-solid fa-check text-jade mt-1"></i><span>Whether the final check digit is mathematically correct.</span></li>
+              </ul>
+            </div>
+            <div class="bg-seal-soft/60 border border-seal/20 rounded-2xl p-6">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-lg bg-seal text-white flex items-center justify-center"><i class="fa-solid fa-eye-slash"></i></div>
+                <div class="font-display font-semibold">But it does not tell you</div>
+              </div>
+              <ul class="space-y-3 text-sm text-ink/75">
+                <li class="flex gap-3"><i class="fa-solid fa-xmark text-seal mt-1"></i><span>Whether the identification number was genuinely issued to that individual.</span></li>
+                <li class="flex gap-3"><i class="fa-solid fa-xmark text-seal mt-1"></i><span>Whether the personal information matches the official identity record.</span></li>
+                <li class="flex gap-3"><i class="fa-solid fa-xmark text-seal mt-1"></i><span>Whether the identification document presented is genuine.</span></li>
+                <li class="flex gap-3"><i class="fa-solid fa-xmark text-seal mt-1"></i><span>Whether the person submitting the document is actually the individual associated with that identity.</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <p>However, they have one major limitation. A number can pass all these checks without being genuine or belonging to the person presenting it.</p>
+          <p>Think about it this way. Someone could provide an identification number that has the correct number of characters, a valid date of birth and a mathematically correct check digit. From a formatting perspective, everything may appear correct.</p>
+          <div class="mt-8 bg-seal-soft border-l-4 border-seal rounded-r-2xl p-6 flex gap-4">
+            <i class="fa-solid fa-quote-left text-seal text-xl mt-1"></i>
+            <p class="!mt-0 font-display font-semibold text-xl leading-snug !text-ink">This is the difference between checking an identification number and verifying an identity.</p>
+          </div>
+          <p>For Malaysian banks, financial institutions, fintech companies and other organisations, the distinction matters.</p>
+        </section>
+
+        <!-- Authoritative verification -->
+        <section id="s-authoritative" class="mt-14">
+          <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">Why Authoritative Identity Verification Is a Separate Step</h2>
+          <p>A proper Chinese identity verification process should go beyond checking the 18-digit number.</p>
+          <p>The objective is not simply to establish whether the number looks correct. It is to establish whether the identity information provided corresponds to an authoritative identity record and whether the person presenting the document is the individual associated with that record.</p>
+          <p>Depending on the verification requirements and available services, this may involve several checks:</p>
+
+          <div id="verify-steps" class="mt-8 space-y-4">
+            <div id="verify-1" class="bg-white border border-ink/10 rounded-2xl p-6 flex gap-5">
+              <div class="shrink-0 w-12 h-12 rounded-xl bg-seal-soft text-seal flex items-center justify-center"><i class="fa-solid fa-id-card text-lg"></i></div>
+              <div><div class="text-[11px] font-semibold uppercase tracking-wider text-ink/40">Check 01</div><div class="font-display font-semibold text-lg">Identity information verification</div><p class="!mt-1 text-sm">The individual's name and Chinese ID number are checked against authoritative identity information to establish whether the submitted details correspond to the relevant identity record.</p></div>
+            </div>
+            <div id="verify-2" class="bg-white border border-ink/10 rounded-2xl p-6 flex gap-5">
+              <div class="shrink-0 w-12 h-12 rounded-xl bg-seal-soft text-seal flex items-center justify-center"><i class="fa-solid fa-user-check text-lg"></i></div>
+              <div><div class="text-[11px] font-semibold uppercase tracking-wider text-ink/40">Check 02</div><div class="font-display font-semibold text-lg">Facial verification</div><p class="!mt-1 text-sm">The individual's live facial image is compared against an authoritative facial reference image associated with the identity record. This provides an additional layer of verification beyond simply looking at the photograph printed on an identity card.</p></div>
+            </div>
+            <div id="verify-3" class="bg-white border border-ink/10 rounded-2xl p-6 flex gap-5">
+              <div class="shrink-0 w-12 h-12 rounded-xl bg-seal-soft text-seal flex items-center justify-center"><i class="fa-solid fa-mobile-screen text-lg"></i></div>
+              <div><div class="text-[11px] font-semibold uppercase tracking-wider text-ink/40">Check 03</div><div class="font-display font-semibold text-lg">Mobile number verification</div><p class="!mt-1 text-sm">The submitted mobile number can be checked as part of the individual's identity verification process.</p></div>
+            </div>
+            <div id="verify-4" class="bg-white border border-ink/10 rounded-2xl p-6 flex gap-5">
+              <div class="shrink-0 w-12 h-12 rounded-xl bg-seal-soft text-seal flex items-center justify-center"><i class="fa-solid fa-credit-card text-lg"></i></div>
+              <div><div class="text-[11px] font-semibold uppercase tracking-wider text-ink/40">Check 04</div><div class="font-display font-semibold text-lg">Bank card number verification</div><p class="!mt-1 text-sm">Where required, bank card information can also be checked against the relevant identity information.</p></div>
+            </div>
+            <div id="verify-5" class="bg-white border border-ink/10 rounded-2xl p-6 flex gap-5">
+              <div class="shrink-0 w-12 h-12 rounded-xl bg-seal-soft text-seal flex items-center justify-center"><i class="fa-solid fa-gavel text-lg"></i></div>
+              <div><div class="text-[11px] font-semibold uppercase tracking-wider text-ink/40">Check 05</div><div class="font-display font-semibold text-lg">Fraud and litigation checks</div><p class="!mt-1 text-sm">Additional checks can help identify relevant fraud-related records and litigation information associated with the individual.</p></div>
+            </div>
+          </div>
+
+          <p>Not every organisation will require all these checks for every onboarding case. The appropriate verification scope depends on the nature of the business, its internal compliance requirements and the level of verification needed.</p>
+          <div class="mt-6 bg-jade-soft border border-jade/20 rounded-2xl p-5 flex gap-4">
+            <i class="fa-solid fa-circle-info text-jade mt-1"></i>
+            <p class="!mt-0 text-sm !text-ink/80 leading-relaxed">The important point is that these are separate verification activities. A mathematically correct ID number is only one small part of the overall process.</p>
+          </div>
+        </section>
+
+        <!-- Takeaway -->
+        <section id="s-takeaway" class="mt-14">
+          <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">What Malaysian Businesses Should Take Away</h2>
+          <p>Malaysia has a growing number of business relationships involving Chinese nationals, whether through employment, financial services, company registration, investment or commercial transactions.</p>
+          <p>For organisations dealing with Chinese customers or business partners, understanding the Chinese ID card number format is a useful starting point.</p>
+          <p>It helps onboarding teams recognise the structure of the document, understand the information encoded in the number and identify basic inconsistencies.</p>
+          <p>However, businesses should be careful not to treat a successful format check as completed identity verification.</p>
+          <p>There is a meaningful difference between an identification number that looks valid and an identity that has been verified against authoritative information.</p>
+          <p>For organisations where identity accuracy is important, that distinction should form part of the onboarding process.</p>
+        </section>
+
+        <!-- CTA -->
+        <section id="article-cta" class="relative overflow-hidden mt-14 bg-ink bg-grid-dark rounded-3xl p-8 md:p-10">
+          <div class="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-seal/30 blur-3xl"></div>
+          <div class="relative">
+            <h2 class="font-display font-bold text-2xl md:text-3xl text-paper tracking-tight">Need to Verify a Chinese National's Identity in Malaysia?</h2>
+            <p class="!mt-4 !text-paper/65">ChinaKYC.my provides information and practical guidance on verifying Chinese nationals and Chinese businesses in Malaysia.</p>
+            <p class="!mt-3 !text-paper/65">For organisations that require more than basic document and identification number checks, Info Data provides China-focused identity verification services, including authoritative identity information checks, facial verification, mobile number verification, bank card verification, fraud checks and litigation checks.</p>
+            <p class="!mt-3 !text-paper/65">The objective is straightforward: help Malaysian organisations go beyond checking what appears on an identification document and establish a stronger basis for identity verification.</p>
+            <div class="mt-7 flex flex-wrap items-center gap-4">
+              <a href="https://infodata.my/kyc-solution" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-seal hover:bg-seal-dark text-white font-semibold px-7 py-3.5 rounded-full transition-colors">Learn more about China KYC at Info Data <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i></a>
+              <a href="../blog.html" class="text-paper/70 hover:text-paper text-sm font-medium"><i class="fa-solid fa-arrow-left mr-2 text-xs"></i>Back to all articles</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- References -->
+        <section id="s-references" class="mt-12 border-t border-ink/10 pt-8">
+          <h2 class="font-display font-semibold text-sm uppercase tracking-wider text-ink/50">Reference</h2>
+          <ol class="mt-4 space-y-3 text-sm text-ink/70">
+            <li class="flex gap-3"><span class="font-mono text-ink/40">[1]</span><span>GB 11643-1999 – Citizen Identification Number, People's Republic of China National Standard.</span></li>
+            <li class="flex gap-3"><span class="font-mono text-ink/40">[2]</span><span>Beijing Municipal Public Security Bureau – Explanation of the 18-digit Citizen Identity Number structure.</span></li>
+          </ol>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer id="footer" class="bg-ink text-paper">
+    <div class="max-w-7xl mx-auto px-6 pt-16 pb-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+        <div class="col-span-2">
+          <a href="../index.html" aria-label="ChinaKYC.my" class="inline-flex mb-4"><img src="../images/logo.png" alt="ChinaKYC.my" class="h-14 w-auto rounded-xl bg-white px-3"></a>
+          <p class="text-sm text-paper/55 max-w-md">China KYC and China KYB verification for financial institutions and regulated organisations. A service by <a href="https://infodata.my" target="_blank" rel="noopener" class="text-paper underline underline-offset-4 decoration-seal">Info Data</a>.</p>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold mb-4">Solutions</h4>
+          <ul class="space-y-2 text-sm text-paper/55">
+            <li><a href="https://infodata.my/kyc-solution" target="_blank" rel="noopener" class="hover:text-seal">China KYC</a></li>
+            <li><a href="https://infodata.my/kyb-solution" target="_blank" rel="noopener" class="hover:text-seal">China KYB</a></li>
+            <li><a href="../blog.html" class="hover:text-seal">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-semibold mb-4">Info Data</h4>
+          <ul class="space-y-2 text-sm text-paper/55">
+            <li><a href="https://infodata.my/about" target="_blank" rel="noopener" class="hover:text-seal">About Info Data</a></li>
+            <li><a href="https://infodata.my/demo" target="_blank" rel="noopener" class="hover:text-seal">Book a Demo</a></li>
+            <li><a href="https://infodata.my/contact" target="_blank" rel="noopener" class="hover:text-seal">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-paper/40">
+        <p>© 2026 ChinaKYC.my · Powered by Info Data. All rights reserved.</p>
+        <p>China KYC · China KYB · Cross-border verification</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var box = document.getElementById('anatomy');
+      var segs = box.querySelectorAll('[data-seg]');
+      function set(key){
+        box.classList.toggle('focus', !!key);
+        segs.forEach(function(el){ el.classList.toggle('active', el.getAttribute('data-seg') === key); });
+      }
+      segs.forEach(function(el){
+        el.addEventListener('mouseenter', function(){ set(el.getAttribute('data-seg')); });
+        el.addEventListener('focus', function(){ set(el.getAttribute('data-seg')); });
+      });
+      box.addEventListener('mouseleave', function(){ set(null); });
+    })();
+  </script>
+</body>
+</html>
